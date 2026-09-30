@@ -7,13 +7,24 @@ namespace MVC1.Controllers
     {
         public IActionResult Index()
         {
-            Student student = new Student();
+            List<Student> students = new List<Student>
+            {
+                new Student
+                {
+                    Name = "Rhaine",
+                    Age = 19,
+                    Course = "Computer Science"
+                },
 
-            student.Name = "Rhaine";
-            student.Age = 19;
-            student.Course = "Computer Science";
+                new Student
+                {
+                    Name = "Marizza",
+                    Age = 19,
+                    Course = "Computer Science"
+                }
+            };
 
-            return View(student);
+            return View(students);
         }
     }
 }

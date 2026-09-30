@@ -1,7 +1,23 @@
-﻿@model MVC1.Models.Student
+﻿@model List<MVC1.Models.Student>
 
 <h1>Student Information</h1>
 
-<p>Name: @Model.Name</p>
-<p>Age: @Model.Age</p>
-<p>Course: @Model.Course</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Course</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.Age</td>
+                <td>@student.Course</td>
+            </tr>
+        }
+    </tbody>
+</table>
